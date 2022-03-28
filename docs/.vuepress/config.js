@@ -11,6 +11,7 @@ module.exports = {
             lang: 'zh-CN'
         }
     },
+    plugins: [['vuepress-plugin-code-copy', true]],
     themeConfig: {
         subSidebar: 'auto',
         nav: [

@@ -9,6 +9,7 @@ date: '2022-03-28'
 
 ```python
 def main():
-    print('hello world')
+    name = 'django'
+    print(f'hello {name}')
 
 ```

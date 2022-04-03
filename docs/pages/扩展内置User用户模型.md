@@ -1,6 +1,6 @@
 ## 扩展用户模型
 
-### 1. 设置Proxy模型：
+### 1. 设置Proxy模型
 
 如果你对`Django`提供的字段，以及验证的方法都比较满意，没有什么需要改的。但是只是需要在他原有的基础之上增加一些操作的方法。那么建议使用这种方式。示例代码如下：
 
@@ -13,7 +13,7 @@ class Person(User):
         return self.objects.filter(is_active=False)
 ```
 
-### 2. 一对一外键：
+### 2. 一对一外键
 
 如果你对用户验证方法`authenticate`没有其他要求，就是使用`username`和`password`即可完成。但是想要在原来模型的基础之上添加新的字段，那么可以使用一对一外键的方式。示例代码如下：
 
@@ -37,7 +37,7 @@ def create_user_extension(sender,instance,created,**kwargs):
         instance.extension.save()
 ```
 
-### 3. 继承自`AbstractUser`：
+### 3. 继承自`AbstractUser`
 
 对于`authenticate`不满意，并且不想要修改原来`User`对象上的一些字段，但是想要增加一些字段，那么这时候可以直接继承自`django.contrib.auth.models.AbstractUser`，其实这个类也是`django.contrib.auth.models.User`的父类。比如我们想要在原来`User`模型的基础之上添加一个`telephone`和`school`字段。示例代码如下：
 
@@ -78,7 +78,7 @@ class UserManager(BaseUserManager):
         return self._create_user(telephone,password)
 ```
 
-### 4. 继承自`AbstractBaseUser`模型：
+### 4. 继承自`AbstractBaseUser`模型
 
 如果你想修改默认的验证方式，并且对于原来`User`模型上的一些字段不想要，那么可以自定义一个模型，然后继承自`AbstractBaseUser`，再添加你想要的字段。这种方式会比较麻烦，最好是确定自己对`Django`比较了解才推荐使用。步骤如下：
 1.创建模型。示例代码如下：

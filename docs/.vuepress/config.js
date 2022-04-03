@@ -28,15 +28,15 @@ module.exports = {
                 title: '欢迎学习',
                 collapsable: false,
                 children: [
-                    {title: '学前必读', path: '/pages/Introduction'}
+                    {title: '简介', path: '/pages/Introduction'}
                 ]
             },
             {
                 title: '基础学习',
-                path: '/pages/Introduction',
                 collapsable: false,
                 children: [
-                    {title: '扩展内置User用户模型', path:'/pages/扩展内置User用户模型.md'}
+                    {title: '扩展内置User用户模型', path:'/pages/扩展内置User用户模型.md'},
+                    {title: 'Django中的信号及其用法', path:'/pages/Django中的信号及其用法.md'}
                 ]
             }
         ]

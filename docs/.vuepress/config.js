@@ -26,10 +26,9 @@ module.exports = {
         sidebar: [
             {
                 title: '欢迎学习',
-                path: '/',
                 collapsable: false,
                 children: [
-                    {title: '学前必读', path: '/'}
+                    {title: '学前必读', path: '/pages/Introduction'}
                 ]
             },
             {
@@ -37,7 +36,7 @@ module.exports = {
                 path: '/pages/Introduction',
                 collapsable: false,
                 children: [
-                    {title: '简介', path: '/pages/Introduction'}
+                    {title: '扩展内置User用户模型', path:'/pages/扩展内置User用户模型.md'}
                 ]
             }
         ]
